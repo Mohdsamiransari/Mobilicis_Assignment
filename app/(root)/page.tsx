@@ -13,7 +13,7 @@ import { redirect } from "next/navigation";
 
 export default async function Home() {
   const user = await currentUser();
-  if(!user) return null
+  if(!user) redirect('/sing-up')
   const userInfo = await fetchUser(user?.id)
     
     const userData = {
@@ -25,6 +25,7 @@ export default async function Home() {
         email: user?.emailAddresses[0].emailAddress
     };
 
+    
 
   return (
     <section className=" z-20 flex h-screen w-full flex-col justify-between overflow-auto pt-24 pb-10 px-6 relative">
