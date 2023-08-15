@@ -11,7 +11,7 @@ import {
 import { Label } from "@/components/ui/label"
 import { Textarea } from "../ui/textarea"
 
-export function EditBio() {
+export function EditBio({user, btnTitle}) {
   return (
     <Dialog>
       <DialogTrigger asChild>

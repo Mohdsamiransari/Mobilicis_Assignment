@@ -18,6 +18,7 @@ export default async function Home() {
     
     const userData = {
         id: user?.id,
+        objectId: userInfo?._id,
         username: userInfo?.username || user?.username,
         bio: userInfo.bio || "",
         image: userInfo?.image || user?.imageUrl,
@@ -62,7 +63,10 @@ export default async function Home() {
             <div className="border w-full h-fit p-4">
                 <div className="flex flex-row justify-between items-center mb-4">
                   <h2 className="text-xl ">About <span className="text-blue-700">{user?.lastName}</span></h2>
-                  <EditBio user={userData}/>
+                  <EditBio 
+                    user={userData}
+                    btnTitle="Continue"
+                  />
                 </div>
                 <p className="md:text-md text-sm">{userInfo.bio}</p>
             </div>
