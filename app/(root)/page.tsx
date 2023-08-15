@@ -13,7 +13,7 @@ import { redirect } from "next/navigation";
 
 export default async function Home() {
   const user = await currentUser();
-  if(!user) redirect('/sing-up')
+  if(!user) redirect('/sigu-up')
   const userInfo = await fetchUser(user?.id)
     
     const userData = {
