@@ -10,8 +10,19 @@ import {
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "../ui/textarea"
+interface Props {
+  user:{
+    id:string;
+    objectId: string;
+    username: string;
+    bio: string;
+    image:string;
+    email:string
+  }
+  btnTitle: string;
+}
 
-export function EditBio({user, btnTitle}) {
+export function EditBio({user, btnTitle}: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
